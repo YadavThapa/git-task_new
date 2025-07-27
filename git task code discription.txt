@@ -1,0 +1,28 @@
+#Step 1. get current working path folder directory
+Get-Location 
+
+# making  the path folder relative
+Set-Location -Path ".\OneDrive\Desktop\John Hopkins University Software Program\level-1\Task 24 - Version Control and Git Basics\git-task\git-task"
+
+# 2. Initialize Git and make the first commit
+git init
+git add "hello_world.py"
+git commit -m "Initial commit of hello_world"
+
+# 3. Check what your default branch name is('* main' or '* master')
+git branch
+
+# 4. Add the remote repository
+git remote add origin https://github.com/YadavThapa/git-task_new.git
+
+# remove the if already exist
+del .git\refs\remotes\origin\main.lock
+
+#git push -u origin main
+git push -u origin main
+
+# Create the git-task.txt file and write the public URL into it.
+echo https://github.com/YadavThapa/git-task_new > git-task.txt
+
+# Verify the content of the file:
+type git-task.txt
